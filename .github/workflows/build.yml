@@ -39,10 +39,9 @@ jobs:
     - name: Set OpenBLAS
       run: ./set_openblas.ps1
     - name: Test
-      shell: bash
       run: |
         cd armadillo/examples
-        cp ${{ github.workspace }}/mingw64/dll/libopenblas.dll ./libopenblas.dll
+        Copy-Item -Path ${{ github.workspace }}/mingw64/dll/libopenblas.dll -Destination ./libopenblas.dll
         ${{ github.workspace }}/mingw64/bin/g++ -c -std=c++17 -static ./example1.cpp
         ${{ github.workspace }}/mingw64/bin/g++ -static ./example1.o ./libopenblas.dll -otest
         ./test
