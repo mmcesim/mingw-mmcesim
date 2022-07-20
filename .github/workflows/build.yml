@@ -38,12 +38,12 @@ jobs:
       run: ./set_armadillo.ps1
     - name: Set OpenBLAS
       run: ./set_openblas.ps1
-    # - name: Test
-    #   run: |
-    #     cd armadillo/examples
-    #     ${{ github.workspace }}/mingw64/bin/g++ -c -std=c++17 -static ./example1.cpp
-    #     ${{ github.workspace }}/mingw64/bin/g++ -static ./example1.o ${{ github.workspace }}/mingw64/dll/libopenblas.dll -otest
-    #     ./test
+    - name: Test
+      run: |
+        cd armadillo/examples
+        ${{ github.workspace }}/mingw64/bin/g++ -c -std=c++17 -static ./example1.cpp
+        ${{ github.workspace }}/mingw64/bin/g++ -static ./example1.o ${{ github.workspace }}/mingw64/dll/libopenblas.dll -otest
+        ./test
     - name: Pack
       run: 7z a -tzip ${{ matrix.config.artifact }} mingw64
 
