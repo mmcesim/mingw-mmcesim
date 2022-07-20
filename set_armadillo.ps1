@@ -4,5 +4,5 @@
 
 # copy to mingw64 include directory
 Copy-Item -Path ./armadillo/include/armadillo -Destination ./mingw64/x86_64-w64-mingw32/include/armadillo
-Copy-Item -Path ./armadillo/include/armadillo_bits -Destination ./mingw64/x86_64-w64-mingw32/include/armadillo armadillo_bits -Recurse
+Copy-Item -Path ./armadillo/include/armadillo_bits -Destination ./mingw64/x86_64-w64-mingw32/include/armadillo_bits -Recurse
 Copy-Item -Path ./armadillo/LICENSE.txt -Destination ./mingw64/licenses/Armadillo.txt
